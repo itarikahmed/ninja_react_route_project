@@ -28,10 +28,13 @@
 
 import Home from "../pages/Home";
 import About from "../pages/About";
+import Contact from "../pages/Help/Contact";
+import FAQ from "../pages/Help/FAQ";
 
 //Layouts
 
 import RootLayout from "../Layouts/RootLayout";
+import HelpLayout from "../Layouts/HelpLayout";
 
 import {
   createBrowserRouter,
@@ -45,6 +48,11 @@ const router = createBrowserRouter(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
+
+      <Route path="help" element={<HelpLayout />}>
+        <Route path="contact" element={<Contact />} />
+        <Route path="faq" element={<FAQ />} />
+      </Route>
     </Route>
   )
 );
